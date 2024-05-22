@@ -18,7 +18,7 @@ namespace Project
         {
             InitializeComponent();
             Text = "Note Book";
-            if(!File.Exists(TitlePath) && !File.Exists(DoPath))
+            if(!File.Exists(TitlePath) || !File.Exists(DoPath))
             {
                 File.Create(TitlePath);
                 File.Create(DoPath);
