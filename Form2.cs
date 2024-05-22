@@ -13,8 +13,8 @@ namespace Project
 {
     public partial class Form2 : MaterialForm
     {
-        readonly static string TitlePath = @"C:\Users\Admin\source\repos\Project\To_Do_List\Title.txt";
-        readonly static string DoPath = @"C:\Users\Admin\source\repos\Project\To_Do_List\Do.txt";
+        readonly static string TitlePath = @"C:\tmp\Title.txt";
+        readonly static string DoPath = @"C:\tmp\Do.txt";
         public Form2()
         {
             InitializeComponent();

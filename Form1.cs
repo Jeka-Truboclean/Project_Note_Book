@@ -9,15 +9,22 @@ namespace Project
 
     public partial class Form1 : MaterialForm
     {
-        readonly static string TitlePath = @"C:\Users\Admin\source\repos\Project\To_Do_List\Title.txt";
-        readonly static string DoPath = @"C:\Users\Admin\source\repos\Project\To_Do_List\Do.txt";
+        readonly static string TitlePath = @"C:\tmp\Title.txt";
+        readonly static string DoPath = @"C:\tmp\Do.txt";
 
-        static string[] Title = File.ReadAllLines(TitlePath);
-        static string[] Do = File.ReadAllLines(DoPath);
+        string[] Title;
+        string[] Do;
         public Form1()
         {
             InitializeComponent();
             Text = "Note Book";
+            if(!File.Exists(TitlePath) && !File.Exists(DoPath))
+            {
+                File.Create(TitlePath);
+                File.Create(DoPath);
+            }
+            Title = File.ReadAllLines(TitlePath);
+            Do = File.ReadAllLines(DoPath);
             titleComboBox.Items.AddRange(Title);
         }
 
